@@ -1,0 +1,104 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-MsEquiposApplication<ms-equipos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.esports.msequipos.MsEquiposApplication",
+            "projectName": "ms-equipos",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsEstadisticasApplication<ms-estadisticas>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.esports.msestadisticas.MsEstadisticasApplication",
+            "projectName": "ms-estadisticas",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsJuegosApplication<ms-juegos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.esports.msjuegos.MsJuegosApplication",
+            "projectName": "ms-juegos",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsJugadoresApplication<ms-jugadores>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.esports.msjugadores.MsJugadoresApplication",
+            "projectName": "ms-jugadores",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsPartidasApplication<ms-partidas>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.esports.mspartidas.MsPartidasApplication",
+            "projectName": "ms-partidas",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsPatrocinadoresApplication<ms-patrocinadores>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.esports.mspatrocinadores.MsPatrocinadoresApplication",
+            "projectName": "ms-patrocinadores",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsRankingsApplication<ms-rankings>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.esports.msrankings.MsRankingsApplication",
+            "projectName": "ms-rankings",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsStreamersApplication<ms-streamers>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.esports.msstreamers.MsStreamersApplication",
+            "projectName": "ms-streamers",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsTorneosApplication<ms-torneos>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.esports.mstorneos.MsTorneosApplication",
+            "projectName": "ms-torneos",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "type": "java",
+            "name": "Spring Boot-MsTransferenciasApplication<ms-transferencias>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.esports.mstransferencias.MsTransferenciasApplication",
+            "projectName": "ms-transferencias",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
