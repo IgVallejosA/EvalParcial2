@@ -31,7 +31,7 @@ public class FaseTorneo {
     private LocalDate fechaFin;
 
     @Column(name = "formato", length = 30)
-    private String formato; // BO1, BO3, BO5, ROUND_ROBIN
+    private String formato;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "torneo_id", nullable = false)

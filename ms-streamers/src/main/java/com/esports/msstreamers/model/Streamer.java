@@ -29,13 +29,13 @@ public class Streamer {
     private String pais;
 
     @Column(name = "idioma", nullable = false, length = 30)
-    private String idioma; // ES, EN, PT, KR, ZH, etc.
+    private String idioma;
 
     @Column(name = "rol", nullable = false, length = 30)
-    private String rol; // CASTER, ANALYST, INTERVIEWER, HOST
+    private String rol;
 
     @Column(name = "plataforma_principal", nullable = false, length = 30)
-    private String plataformaPrincipal; // TWITCH, YOUTUBE, KICK
+    private String plataformaPrincipal;
 
     @Column(name = "seguidores")
     private Integer seguidores;

@@ -22,7 +22,6 @@ public class Juego {
     @Column(name = "nombre", nullable = false, unique = true, length = 100)
     private String nombre;
 
-    // Género: MOBA, FPS, RTS, FIGHTING, BR, CARDS, SPORTS
     @Column(name = "genero", nullable = false, length = 20)
     private String genero;
 
@@ -32,11 +31,9 @@ public class Juego {
     @Column(name = "fecha_lanzamiento", nullable = false)
     private LocalDate fechaLanzamiento;
 
-    // Plataformas: "PC,PS5,XBOX"
     @Column(name = "plataforma", nullable = false, length = 100)
     private String plataforma;
 
-    // Premio acumulado histórico de torneos en USD
     @Column(name = "prize_pool_total_usd")
     private Double prizePoolTotalUsd;
 

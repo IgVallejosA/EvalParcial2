@@ -21,14 +21,12 @@ public class RosterHistorico {
     @Column(name = "id_jugador", nullable = false)
     private Long idJugador;
 
-    // Mantener el nickname que usaba en ese equipo.
     @Column(name = "nickname_al_unirse", length = 50)
     private String nicknameAlUnirse;
 
     @Column(name = "fecha_inicio", nullable = false)
     private LocalDate fechaInicio;
 
-    // null = sigue activo en el equipo
     @Column(name = "fecha_fin")
     private LocalDate fechaFin;
 

@@ -148,7 +148,6 @@ public class JuegoService {
         try {
             Juego juego = obtenerJuegoOFallar(idJuego);
 
-            // REGLA: nombre único de modo dentro del mismo juego
             if (modoRepository.existsByJuegoIdAndNombreModo(idJuego, dto.getNombreModo())) {
                 log.warn("Modo duplicado rechazado: '{}' ya existe en juego {}",
                         dto.getNombreModo(), idJuego);

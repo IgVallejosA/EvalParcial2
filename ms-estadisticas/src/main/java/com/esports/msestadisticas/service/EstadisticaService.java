@@ -29,7 +29,7 @@ public class EstadisticaService {
     public EstadisticaResponseDTO registrar(EstadisticaRequestDTO dto) {
         log.info("Registrando estadística: jugador={}, partida={}", dto.getIdJugador(), dto.getIdPartida());
         try {
-            // No duplicados
+
             if (estadisticaRepository.existsByIdJugadorAndIdPartida(dto.getIdJugador(), dto.getIdPartida())) {
                 throw new ReglaNegocioException(
                         "Ya existe estadística para el jugador " + dto.getIdJugador()
@@ -39,14 +39,12 @@ public class EstadisticaService {
             JugadorRemotoDTO jugador = jugadorClient.obtenerJugadorPorId(dto.getIdJugador());
             PartidaRemotoDTO partida = partidaClient.obtenerPartidaPorId(dto.getIdPartida());
 
-            // Solo partidas finalizadas
             if (!"FINALIZADA".equals(partida.getEstado())) {
                 throw new ReglaNegocioException(
                         "Solo se pueden registrar stats en partidas finalizadas. Estado actual: "
                                 + partida.getEstado());
             }
 
-            // Cálculo KDA
             double kda = calcularKDA(dto.getKills(), dto.getDeaths(), dto.getAssists());
 
             Estadistica est = Estadistica.builder()

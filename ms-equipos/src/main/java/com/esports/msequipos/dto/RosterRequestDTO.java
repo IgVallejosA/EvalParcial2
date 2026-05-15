@@ -17,6 +17,5 @@ public class RosterRequestDTO {
     @PastOrPresent(message = "La fecha de inicio no puede ser futura")
     private LocalDate fechaInicio;
 
-    // fechaFin puede ser null (jugador sigue activo)
     private LocalDate fechaFin;
 }

@@ -45,10 +45,10 @@ public class Torneo {
     private Integer maxEquipos;
 
     @Column(name = "modalidad", nullable = false, length = 30)
-    private String modalidad; // PRESENCIAL, ONLINE, HIBRIDO
+    private String modalidad;
 
     @Column(name = "estado", nullable = false, length = 30)
-    private String estado; // PLANIFICADO, EN_CURSO, FINALIZADO, CANCELADO
+    private String estado;
 
     @OneToMany(mappedBy = "torneo", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JsonManagedReference

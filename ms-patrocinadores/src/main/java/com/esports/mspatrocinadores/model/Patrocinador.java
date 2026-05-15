@@ -23,7 +23,7 @@ public class Patrocinador {
     private String nombreEmpresa;
 
     @Column(name = "industria", nullable = false, length = 50)
-    private String industria; // TECH, ENERGY_DRINK, GAMING_HARDWARE, AUTOMOTIVE, etc.
+    private String industria;
 
     @Column(name = "pais_origen", nullable = false, length = 50)
     private String paisOrigen;
@@ -32,7 +32,7 @@ public class Patrocinador {
     private String sitioWeb;
 
     @Column(name = "tier", nullable = false, length = 20)
-    private String tier; // PLATINUM, GOLD, SILVER, BRONZE
+    private String tier;
 
     @Column(name = "activo", nullable = false)
     private Boolean activo;

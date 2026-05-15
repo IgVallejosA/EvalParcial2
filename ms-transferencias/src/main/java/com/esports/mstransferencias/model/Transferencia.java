@@ -42,7 +42,7 @@ public class Transferencia {
     private Double montoUsd;
 
     @Column(name = "tipo", nullable = false, length = 30)
-    private String tipo; // TRANSFERENCIA, FICHAJE_INICIAL, BAJA, PRESTAMO
+    private String tipo;
 
     @Column(name = "duracion_contrato_meses")
     private Integer duracionContratoMeses;

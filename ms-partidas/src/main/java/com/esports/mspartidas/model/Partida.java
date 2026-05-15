@@ -51,7 +51,7 @@ public class Partida {
     private Long idEquipoGanador;
 
     @Column(name = "estado", nullable = false, length = 30)
-    private String estado; // EN_CURSO, FINALIZADA, CANCELADA
+    private String estado;
 
     @Column(name = "mapa_o_escenario", length = 80)
     private String mapaOEscenario;

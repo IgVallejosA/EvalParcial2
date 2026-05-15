@@ -19,7 +19,7 @@ public class RankingEntrada {
     private Long id;
 
     @Column(name = "tipo_entidad", nullable = false, length = 20)
-    private String tipoEntidad; // EQUIPO, JUGADOR
+    private String tipoEntidad;
 
     @Column(name = "id_entidad", nullable = false)
     private Long idEntidad;

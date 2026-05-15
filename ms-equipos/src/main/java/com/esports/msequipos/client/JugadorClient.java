@@ -30,7 +30,7 @@ public class JugadorClient {
             JugadorRemotoDTO jugador = webClientJugadores.get()
                     .uri("/{id}", idJugador)
                     .retrieve()
-                    // Mapeo explícito de errores HTTP a excepciones del dominio
+
                     .onStatus(HttpStatusCode::is4xxClientError, response -> {
                         log.warn("ms-jugadores respondió 4xx para ID {}: {}", idJugador, response.statusCode());
                         return Mono.error(new RecursoNoEncontradoException(

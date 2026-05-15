@@ -36,7 +36,7 @@ public class RankingService {
             if ("EQUIPO".equals(dto.getTipoEntidad())) {
                 EquipoRemotoDTO e = equipoClient.obtenerEquipoPorId(dto.getIdEntidad());
                 nombreEntidad = e.getNombre();
-            } else { // JUGADOR
+            } else {
                 JugadorRemotoDTO j = jugadorClient.obtenerJugadorPorId(dto.getIdEntidad());
                 nombreEntidad = j.getNickname();
             }
@@ -111,7 +111,7 @@ public class RankingService {
         String tipo = r.getTipoEntidad();
         String region = r.getRegion();
         rankingRepository.deleteById(id);
-        recalcularPosiciones(tipo, region); // recalcular después de borrar
+        recalcularPosiciones(tipo, region);
     }
 
     private RankingResponseDTO mapearAResponse(RankingEntrada r) {

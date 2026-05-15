@@ -19,7 +19,6 @@ public class GlobalExceptionHandler {
 
     private static final Logger log = LoggerFactory.getLogger(GlobalExceptionHandler.class);
 
-    // ==================== 404 NOT FOUND ====================
     @ExceptionHandler(RecursoNoEncontradoException.class)
     public ResponseEntity<ErrorResponse> handleNoEncontrado(
             RecursoNoEncontradoException ex, HttpServletRequest request) {
