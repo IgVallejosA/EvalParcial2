@@ -21,6 +21,8 @@ public class EquipoController {
 
     private final EquipoService equipoService;
 
+    // ==================== EQUIPOS ====================
+
     @PostMapping
     public ResponseEntity<EquipoResponseDTO> crear(@Valid @RequestBody EquipoRequestDTO dto) {
         log.debug("POST /api/v1/equipos - {}", dto.getNombre());
@@ -67,6 +69,8 @@ public class EquipoController {
         return ResponseEntity.noContent().build();
     }
 
+    // ==================== STAFF ====================
+
     @PostMapping("/{idEquipo}/staff")
     public ResponseEntity<StaffResponseDTO> agregarStaff(
             @PathVariable Long idEquipo,
@@ -75,6 +79,8 @@ public class EquipoController {
         return ResponseEntity.status(HttpStatus.CREATED)
                 .body(equipoService.agregarStaff(idEquipo, dto));
     }
+
+    // ==================== ROSTER ====================
 
     @PostMapping("/{idEquipo}/roster")
     public ResponseEntity<RosterResponseDTO> agregarJugador(

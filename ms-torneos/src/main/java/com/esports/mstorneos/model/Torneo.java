@@ -9,8 +9,10 @@ import java.util.List;
 
 @Entity
 @Table(name = "torneos")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Torneo {
 
@@ -43,15 +45,12 @@ public class Torneo {
     private Integer maxEquipos;
 
     @Column(name = "modalidad", nullable = false, length = 30)
-    private String modalidad; 
+    private String modalidad; // PRESENCIAL, ONLINE, HIBRIDO
 
     @Column(name = "estado", nullable = false, length = 30)
-    private String estado; 
+    private String estado; // PLANIFICADO, EN_CURSO, FINALIZADO, CANCELADO
 
-    @OneToMany(mappedBy = "torneo",
-               cascade = CascadeType.ALL,
-               orphanRemoval = true,
-               fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "torneo", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JsonManagedReference
     @Builder.Default
     private List<FaseTorneo> fases = new ArrayList<>();

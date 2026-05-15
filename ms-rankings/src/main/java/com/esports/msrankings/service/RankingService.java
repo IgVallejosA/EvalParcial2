@@ -13,7 +13,6 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -37,7 +36,7 @@ public class RankingService {
             if ("EQUIPO".equals(dto.getTipoEntidad())) {
                 EquipoRemotoDTO e = equipoClient.obtenerEquipoPorId(dto.getIdEntidad());
                 nombreEntidad = e.getNombre();
-            } else { 
+            } else { // JUGADOR
                 JugadorRemotoDTO j = jugadorClient.obtenerJugadorPorId(dto.getIdEntidad());
                 nombreEntidad = j.getNickname();
             }
@@ -112,7 +111,7 @@ public class RankingService {
         String tipo = r.getTipoEntidad();
         String region = r.getRegion();
         rankingRepository.deleteById(id);
-        recalcularPosiciones(tipo, region); 
+        recalcularPosiciones(tipo, region); // recalcular después de borrar
     }
 
     private RankingResponseDTO mapearAResponse(RankingEntrada r) {

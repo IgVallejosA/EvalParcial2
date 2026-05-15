@@ -7,7 +7,6 @@ import com.esports.mspatrocinadores.model.Contrato;
 import com.esports.mspatrocinadores.model.Patrocinador;
 import com.esports.mspatrocinadores.exception.RecursoNoEncontradoException;
 import com.esports.mspatrocinadores.exception.ReglaNegocioException;
-import com.esports.mspatrocinadores.repository.ContratoRepository;
 import com.esports.mspatrocinadores.repository.PatrocinadorRepository;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
@@ -24,7 +23,6 @@ public class PatrocinadorService {
     private static final Logger log = LoggerFactory.getLogger(PatrocinadorService.class);
 
     private final PatrocinadorRepository patrocinadorRepository;
-    private final ContratoRepository contratoRepository;
     private final EquipoClient equipoClient;
 
     @Transactional

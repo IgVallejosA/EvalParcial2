@@ -7,8 +7,10 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "fases_torneo")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class FaseTorneo {
 
@@ -29,7 +31,7 @@ public class FaseTorneo {
     private LocalDate fechaFin;
 
     @Column(name = "formato", length = 30)
-    private String formato; 
+    private String formato; // BO1, BO3, BO5, ROUND_ROBIN
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "torneo_id", nullable = false)

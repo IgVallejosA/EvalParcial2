@@ -4,8 +4,10 @@ import jakarta.validation.constraints.*;
 import lombok.*;
 import java.time.LocalDate;
 
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class TransferenciaRequestDTO {
 
@@ -27,8 +29,7 @@ public class TransferenciaRequestDTO {
     private Double montoUsd;
 
     @NotBlank
-    @Pattern(regexp = "TRANSFERENCIA|FICHAJE_INICIAL|BAJA|PRESTAMO",
-             message = "Tipo: TRANSFERENCIA, FICHAJE_INICIAL, BAJA o PRESTAMO")
+    @Pattern(regexp = "TRANSFERENCIA|FICHAJE_INICIAL|BAJA|PRESTAMO", message = "Tipo: TRANSFERENCIA, FICHAJE_INICIAL, BAJA o PRESTAMO")
     private String tipo;
 
     @Positive

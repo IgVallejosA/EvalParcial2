@@ -31,7 +31,6 @@ public class JuegoService {
         log.info("Creando juego: {}", dto.getNombre());
 
         try {
-
             if (juegoRepository.existsByNombre(dto.getNombre())) {
                 log.warn("Juego duplicado rechazado: {}", dto.getNombre());
                 throw new ReglaNegocioException(
@@ -149,6 +148,7 @@ public class JuegoService {
         try {
             Juego juego = obtenerJuegoOFallar(idJuego);
 
+            // REGLA: nombre único de modo dentro del mismo juego
             if (modoRepository.existsByJuegoIdAndNombreModo(idJuego, dto.getNombreModo())) {
                 log.warn("Modo duplicado rechazado: '{}' ya existe en juego {}",
                         dto.getNombreModo(), idJuego);
@@ -180,7 +180,6 @@ public class JuegoService {
     @Transactional(readOnly = true)
     public List<ModoCompetitivoResponseDTO> listarModosDeJuego(Long idJuego) {
         log.info("Listando modos del juego ID: {}", idJuego);
-
         if (!juegoRepository.existsById(idJuego)) {
             throw new RecursoNoEncontradoException("Juego no encontrado con ID: " + idJuego);
         }

@@ -9,5 +9,6 @@ import java.util.List;
 @Repository
 public interface FaseTorneoRepository extends JpaRepository<FaseTorneo, Long> {
     List<FaseTorneo> findByTorneoIdOrderByOrden(Long torneoId);
+
     boolean existsByTorneoIdAndOrden(Long torneoId, Integer orden);
 }

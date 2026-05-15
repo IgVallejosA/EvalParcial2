@@ -6,8 +6,10 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "jugadores")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Jugador {
 

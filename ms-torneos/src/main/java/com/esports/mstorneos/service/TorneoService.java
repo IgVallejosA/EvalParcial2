@@ -15,7 +15,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.List;
 
@@ -51,14 +50,14 @@ public class TorneoService {
             Torneo torneo = Torneo.builder()
                     .nombre(dto.getNombre())
                     .idJuego(dto.getIdJuego())
-                    .nombreJuego(juego.getNombre()) 
+                    .nombreJuego(juego.getNombre())
                     .organizador(dto.getOrganizador())
                     .fechaInicio(dto.getFechaInicio())
                     .fechaFin(dto.getFechaFin())
                     .premioTotalUsd(dto.getPremioTotalUsd())
                     .maxEquipos(dto.getMaxEquipos())
                     .modalidad(dto.getModalidad())
-                    .estado("PLANIFICADO") 
+                    .estado("PLANIFICADO")
                     .build();
 
             Torneo guardado = torneoRepository.save(torneo);

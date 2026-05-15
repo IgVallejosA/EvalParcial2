@@ -59,13 +59,13 @@ public class JugadorController {
     public ResponseEntity<Void> desactivar(@PathVariable Long id) {
         log.debug("PATCH /api/v1/jugadores/{}/desactivar", id);
         jugadorService.desactivar(id);
-        return ResponseEntity.noContent().build(); 
+        return ResponseEntity.noContent().build();
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
         log.debug("DELETE /api/v1/jugadores/{}", id);
         jugadorService.eliminar(id);
-        return ResponseEntity.noContent().build(); 
+        return ResponseEntity.noContent().build();
     }
 }

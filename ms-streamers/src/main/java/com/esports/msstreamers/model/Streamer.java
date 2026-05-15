@@ -8,8 +8,10 @@ import java.util.List;
 
 @Entity
 @Table(name = "streamers")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Streamer {
 
@@ -27,13 +29,13 @@ public class Streamer {
     private String pais;
 
     @Column(name = "idioma", nullable = false, length = 30)
-    private String idioma; 
+    private String idioma; // ES, EN, PT, KR, ZH, etc.
 
     @Column(name = "rol", nullable = false, length = 30)
-    private String rol; 
+    private String rol; // CASTER, ANALYST, INTERVIEWER, HOST
 
     @Column(name = "plataforma_principal", nullable = false, length = 30)
-    private String plataformaPrincipal; 
+    private String plataformaPrincipal; // TWITCH, YOUTUBE, KICK
 
     @Column(name = "seguidores")
     private Integer seguidores;
@@ -41,10 +43,7 @@ public class Streamer {
     @Column(name = "activo", nullable = false)
     private Boolean activo;
 
-    @OneToMany(mappedBy = "streamer",
-               cascade = CascadeType.ALL,
-               orphanRemoval = true,
-               fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "streamer", cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
     @JsonManagedReference
     @Builder.Default
     private List<AsignacionCobertura> coberturas = new ArrayList<>();

@@ -27,12 +27,11 @@ public class JuegoClient {
             JuegoRemotoDTO juego = webClientJuegos.get()
                     .uri("/{id}", idJuego)
                     .retrieve()
-                    .onStatus(HttpStatusCode::is4xxClientError, response ->
-                        Mono.error(new RecursoNoEncontradoException(
-                                "Juego con ID " + idJuego + " no existe en ms-juegos")))
-                    .onStatus(HttpStatusCode::is5xxServerError, response ->
-                        Mono.error(new ComunicacionMicroservicioException(
-                                "ms-juegos no está disponible")))
+                    .onStatus(HttpStatusCode::is4xxClientError, response -> Mono.error(new RecursoNoEncontradoException(
+                            "Juego con ID " + idJuego + " no existe en ms-juegos")))
+                    .onStatus(HttpStatusCode::is5xxServerError,
+                            response -> Mono.error(new ComunicacionMicroservicioException(
+                                    "ms-juegos no está disponible")))
                     .bodyToMono(JuegoRemotoDTO.class)
                     .timeout(TIMEOUT)
                     .block();

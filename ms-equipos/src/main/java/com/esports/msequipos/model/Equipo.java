@@ -22,6 +22,7 @@ public class Equipo {
     @Column(name = "nombre", nullable = false, length = 80)
     private String nombre;
 
+    // Región: LATAM, NA, EMEA, KR, CN, etc.
     @Column(name = "region", nullable = false, length = 20)
     private String region;
 

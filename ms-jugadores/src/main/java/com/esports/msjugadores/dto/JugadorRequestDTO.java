@@ -4,8 +4,10 @@ import jakarta.validation.constraints.*;
 import lombok.*;
 import java.time.LocalDate;
 
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class JugadorRequestDTO {
 
@@ -29,6 +31,7 @@ public class JugadorRequestDTO {
     @Size(max = 30, message = "El rol no puede superar los 30 caracteres")
     private String rol;
 
+    // Opcional: puede ser null si es free agent (sin equipo)
     private Long idEquipoActual;
 
     @PositiveOrZero(message = "El salario no puede ser negativo")

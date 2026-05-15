@@ -6,8 +6,10 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "transferencias")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Transferencia {
 
@@ -40,7 +42,7 @@ public class Transferencia {
     private Double montoUsd;
 
     @Column(name = "tipo", nullable = false, length = 30)
-    private String tipo; 
+    private String tipo; // TRANSFERENCIA, FICHAJE_INICIAL, BAJA, PRESTAMO
 
     @Column(name = "duracion_contrato_meses")
     private Integer duracionContratoMeses;

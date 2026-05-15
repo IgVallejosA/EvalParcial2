@@ -7,8 +7,10 @@ import java.time.LocalDate;
 
 @Entity
 @Table(name = "asignaciones_cobertura")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class AsignacionCobertura {
 

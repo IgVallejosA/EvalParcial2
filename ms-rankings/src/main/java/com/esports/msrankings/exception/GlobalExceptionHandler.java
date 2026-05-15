@@ -14,6 +14,10 @@ import java.time.LocalDateTime;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Manejador centralizado de excepciones (IE 2.3.1).
+ * Garantiza respuestas JSON uniformes con códigos HTTP semánticamente correctos.
+ */
 @RestControllerAdvice
 public class GlobalExceptionHandler {
 
@@ -47,6 +51,9 @@ public class GlobalExceptionHandler {
                         .build());
     }
 
+    /**
+     * 503 SERVICE UNAVAILABLE - falla de comunicación entre microservicios.
+     */
     @ExceptionHandler(ComunicacionMicroservicioException.class)
     public ResponseEntity<ErrorResponse> handleComunicacion(
             ComunicacionMicroservicioException ex, HttpServletRequest request) {

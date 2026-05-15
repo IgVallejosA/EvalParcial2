@@ -17,12 +17,14 @@ public class ModoCompetitivo {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // Ej: "5v5 Summoner's Rift", "1v1 Aim Map", "Trios Battle Royale"
     @Column(name = "nombre_modo", nullable = false, length = 80)
     private String nombreModo;
 
     @Column(name = "max_jugadores_por_equipo", nullable = false)
     private Integer maxJugadoresPorEquipo;
 
+    // Duración promedio en minutos: útil para planificar torneos
     @Column(name = "duracion_promedio_minutos")
     private Integer duracionPromedioMinutos;
 

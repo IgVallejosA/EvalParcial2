@@ -6,8 +6,10 @@ import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "partidas")
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class Partida {
 
@@ -49,7 +51,7 @@ public class Partida {
     private Long idEquipoGanador;
 
     @Column(name = "estado", nullable = false, length = 30)
-    private String estado; 
+    private String estado; // EN_CURSO, FINALIZADA, CANCELADA
 
     @Column(name = "mapa_o_escenario", length = 80)
     private String mapaOEscenario;

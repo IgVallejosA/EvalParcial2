@@ -5,10 +5,12 @@ import lombok.*;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "ranking_entradas",
-       uniqueConstraints = @UniqueConstraint(columnNames = {"tipo_entidad", "id_entidad", "region"}))
-@Getter @Setter
-@NoArgsConstructor @AllArgsConstructor
+@Table(name = "ranking_entradas", uniqueConstraints = @UniqueConstraint(columnNames = { "tipo_entidad", "id_entidad",
+        "region" }))
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class RankingEntrada {
 
@@ -17,10 +19,10 @@ public class RankingEntrada {
     private Long id;
 
     @Column(name = "tipo_entidad", nullable = false, length = 20)
-    private String tipoEntidad; 
+    private String tipoEntidad; // EQUIPO, JUGADOR
 
     @Column(name = "id_entidad", nullable = false)
-    private Long idEntidad; 
+    private Long idEntidad;
 
     @Column(name = "nombre_entidad", nullable = false, length = 100)
     private String nombreEntidad;

@@ -34,7 +34,7 @@ public class Contrato {
     private LocalDate fechaFin;
 
     @Column(name = "tipo_acuerdo", length = 30)
-    private String tipoAcuerdo; 
+    private String tipoAcuerdo; // JERSEY, NAMING_RIGHTS, EVENT, MERCHANDISE
 
     @Column(name = "activo", nullable = false)
     private Boolean activo;

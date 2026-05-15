@@ -20,6 +20,7 @@ public class StaffTecnico {
     @Column(name = "nombre", nullable = false, length = 100)
     private String nombre;
 
+    // HEAD_COACH, ASSISTANT_COACH, ANALYST, MANAGER, PSYCHOLOGIST
     @Column(name = "rol_staff", nullable = false, length = 30)
     private String rolStaff;
 

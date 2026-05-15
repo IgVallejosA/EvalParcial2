@@ -28,7 +28,6 @@ public class TransferenciaService {
     public TransferenciaResponseDTO registrar(TransferenciaRequestDTO dto) {
         log.info("Registrando transferencia de jugador {} ({})", dto.getIdJugador(), dto.getTipo());
         try {
-
             validarTipoTransferencia(dto);
 
             if (dto.getIdEquipoOrigen() != null

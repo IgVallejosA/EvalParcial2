@@ -92,7 +92,7 @@ public class PartidaService {
         } else if (dto.getMarcadorVisitante() > dto.getMarcadorLocal()) {
             partida.setIdEquipoGanador(partida.getIdEquipoVisitante());
         } else {
-            partida.setIdEquipoGanador(null); 
+            partida.setIdEquipoGanador(null);
             log.info("Partida {} terminó en empate", idPartida);
         }
 

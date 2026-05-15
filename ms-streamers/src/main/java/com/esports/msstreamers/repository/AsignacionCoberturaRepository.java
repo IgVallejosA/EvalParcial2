@@ -9,6 +9,8 @@ import java.util.List;
 @Repository
 public interface AsignacionCoberturaRepository extends JpaRepository<AsignacionCobertura, Long> {
     List<AsignacionCobertura> findByStreamerId(Long streamerId);
+
     List<AsignacionCobertura> findByIdTorneo(Long idTorneo);
+
     boolean existsByStreamerIdAndIdTorneo(Long streamerId, Long idTorneo);
 }

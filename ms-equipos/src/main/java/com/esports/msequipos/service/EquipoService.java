@@ -32,6 +32,7 @@ public class EquipoService {
 
     private static final String ROL_HEAD_COACH = "HEAD_COACH";
 
+    // ==================== CRUD EQUIPO ====================
     @Transactional
     public EquipoResponseDTO crearEquipo(EquipoRequestDTO dto) {
         log.info("Creando equipo: {} ({})", dto.getNombre(), dto.getRegion());
@@ -120,6 +121,7 @@ public class EquipoService {
         }
     }
 
+    // No se puede desactivar si hay jugadores activos.
     @Transactional
     public void desactivarEquipo(Long id) {
         log.info("Desactivando equipo ID: {}", id);
@@ -152,6 +154,8 @@ public class EquipoService {
         equipoRepository.deleteById(id);
         log.warn("Equipo {} eliminado FÍSICAMENTE", id);
     }
+
+    // ==================== STAFF ====================
 
     @Transactional
     public StaffResponseDTO agregarStaff(Long idEquipo, StaffRequestDTO dto) {
@@ -192,12 +196,15 @@ public class EquipoService {
         }
     }
 
+    // ==================== ROSTER ====================
+
     @Transactional
     public RosterResponseDTO agregarJugadorAlRoster(Long idEquipo, RosterRequestDTO dto) {
         log.info("Agregando jugador {} al roster del equipo {}", dto.getIdJugador(), idEquipo);
         try {
             Equipo equipo = obtenerEquipoOFallar(idEquipo);
 
+            // validar que el jugador existe en ms-jugadores
             JugadorRemotoDTO jugadorRemoto = jugadorClient.obtenerJugadorPorId(dto.getIdJugador());
 
             if (Boolean.FALSE.equals(jugadorRemoto.getActivo())) {
@@ -243,7 +250,7 @@ public class EquipoService {
     }
 
     private EquipoResponseDTO mapearEquipoAResponse(Equipo e) {
-
+        // Cuenta jugadores actuales
         int actuales = (int) e.getRoster().stream()
                 .filter(r -> r.getFechaFin() == null)
                 .count();
